@@ -177,6 +177,8 @@ namespace Geotab.SDK.DataFeed
                         }
                     }
 
+                    grpcCall = grpcCall != null ? grpcClient.Stream(grpcMetadata) : null;
+
                     string responseString;
                     if (grpcCall == null){
                         response = await grpcClient.SendAsync(request, grpcMetadata);
